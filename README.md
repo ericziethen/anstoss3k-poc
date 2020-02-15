@@ -87,7 +87,7 @@ Proof of Concept of a Kind of re-implementation of Anstoss 3
 ### Result Page
 * Random Data with correct result...
 
-# Table and Statistics
+### Table and Statistics
 * Only show the table tab
 
 ## Data
