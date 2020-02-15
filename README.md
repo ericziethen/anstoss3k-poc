@@ -34,7 +34,7 @@ Proof of Concept of a Kind of re-implementation of Anstoss 3
 * Populated with random data
 
 ### Menu 06 - Individual Training
-*Data Populated from own Team
+* Data Populated from own Team
 
 ### Menu 07 - Yearly Calendar
 * Just show example Month
@@ -76,7 +76,7 @@ Proof of Concept of a Kind of re-implementation of Anstoss 3
 ### Menu 19 - "GO" Button
 * Just button Action
 
-### Team Progress
+### Week Progress
 * Show Team name and Opponent
 * Show Random Graph for form and stamina
 * Animation through the weekdays
