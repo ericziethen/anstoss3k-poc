@@ -1,3 +1,12 @@
+<table>
+    <tr>
+        <td>Travis CI</td>
+        <td><img src='https://travis-ci.org/ericziethen/anstoss3k-poc.svg?branch=master'></td>
+        <td>Coverage</td>
+        <td><img src='https://codecov.io/gh/ericziethen/anstoss3k-poc/branch/master/graph/badge.svg'></td>
+    </tr>
+</table>
+
 # anstoss3k-poc
 Proof of Concept of a Kind of re-implementation of Anstoss 3
 
