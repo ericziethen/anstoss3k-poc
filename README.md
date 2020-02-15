@@ -64,10 +64,10 @@ Proof of Concept of a Kind of re-implementation of Anstoss 3
 * Hardcoded Menu
 * Show current table
 
-### Menu 16 -National Team
+### Menu 16 - National Team
 * Hardcoded Menu
 
-### Menu 17 -Personal
+### Menu 17 - Personal
 * Hardcoded
 
 ### Menu 18 - Options
