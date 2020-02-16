@@ -19,4 +19,4 @@ class GameEngine():
     def action(self, action):
         state_class = self.states[self.state]
         state_class.handle_input(action)
-        self.state = state_class.next_state()
+        self.state = state_class.next_state(action)

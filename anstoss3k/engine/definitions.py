@@ -26,5 +26,5 @@ class State():
     def handle_input(self, action):
         raise NotImplementedError
 
-    def next_state(self):
+    def next_state(self, action):
         raise NotImplementedError
