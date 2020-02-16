@@ -40,6 +40,3 @@ class GameEngine():
         match_day_count = (team_count - 1) * 2
         for day in range(1, match_day_count + 1):
             self.data['match_days'].append(day)
-
-
-
