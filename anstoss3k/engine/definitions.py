@@ -16,7 +16,7 @@ class GameState(enum.Enum):
     MATCH_DAY_PREVIEW = 'Match Day Preview'
     MATCH_DAY_RESULTS = 'Match Day Results'
     MATCH_DAY_TABLES = 'Tables'
-    #SEASON_END = 'Season End'
+    SEASON_END = 'Season End'
 
 
 class State():
