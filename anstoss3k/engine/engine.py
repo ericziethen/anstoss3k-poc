@@ -7,11 +7,15 @@ from anstoss3k.engine.states import (
 
 
 class GameEngine():
-    def __init__(self):
+    def __init__(self, data):
         self.state = GameState.TEAM_SELECTION
         self.states = {}
-        self.data = {}
+        self.data = data
 
+        # Initialize the Data
+        self.init_season()
+
+        # Initialize the States
         self.init_states()
 
     def init_states(self):
@@ -25,3 +29,17 @@ class GameEngine():
         state_class = self.states[self.state]
         state_class.handle_input(action)
         self.state = state_class.next_state(action)
+
+    def init_season(self):
+        self.data['match_days'] = []
+        self.init_matchdays()
+        self.data['current_match_day'] = 1
+
+    def init_matchdays(self):
+        team_count = len(self.data['teams'])
+        match_day_count = (team_count - 1) * 2
+        for day in range(1, match_day_count + 1):
+            self.data['match_days'].append(day)
+
+
+
