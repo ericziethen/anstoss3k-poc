@@ -9,6 +9,7 @@ class MatchDayTablesState(State):
     def next_state(self, action):
         if action == GameAction.FINISH_MOVE:
             if self.data['current_match_day'] < len(self.data['match_days']):
+                self.data['current_match_day'] += 1
                 return GameState.TEAM_SELECTION
 
             return GameState.SEASON_END

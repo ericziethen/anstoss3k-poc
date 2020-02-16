@@ -3,8 +3,6 @@ from anstoss3k.engine.engine import GameEngine
 from anstoss3k.engine.definitions import GameAction, GameState
 
 
-
-'''
 def test_season_states_2_teams():
     game_data = {
             'teams': ['Team 1', 'Team 2']
@@ -41,4 +39,3 @@ def test_season_states_2_teams():
 
     # End of Season
     assert engine.state == GameState.SEASON_END
-'''

@@ -18,5 +18,7 @@ def test_game_action_next_state():
     assert game_engine.state == GameState.PROGRESS_WEEK
 
 def test_setup_matchdays():
-    pass
-
+    game_engine = engine.GameEngine(GAME_DATA)
+    assert len(game_engine.data['match_days']) == 2
+    assert 1 in game_engine.data['match_days']
+    assert 2 in game_engine.data['match_days']
