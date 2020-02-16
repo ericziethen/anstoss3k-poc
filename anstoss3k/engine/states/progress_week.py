@@ -1,4 +1,3 @@
-''' States and Sub-States for the Team selection '''
 
 from anstoss3k.engine.definitions import GameAction, GameState, State
 

@@ -8,16 +8,9 @@ def test_initial_game_state():
     assert game_engine.state == GameState.TEAM_SELECTION
 
 
-def test_team_selection_complete():
+def test_game_action_next_state():
     game_engine = engine.GameEngine()
     game_engine.action(GameAction.FINISH_MOVE)
 
     assert game_engine.state == GameState.PROGRESS_WEEK
 
-
-def test_week_progress_complete():
-    game_engine = engine.GameEngine()
-    game_engine.state = GameState.PROGRESS_WEEK
-    game_engine.action(GameAction.FINISH_MOVE)
-
-    assert game_engine.state == GameState.MATCH_DAY_PREVIEW
