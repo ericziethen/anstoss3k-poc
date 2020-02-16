@@ -2,8 +2,9 @@
 
 from anstoss3k.engine.definitions import GameState
 from anstoss3k.engine.states import (
-    team_selection
+    team_selection, progress_week
 )
+
 
 class GameEngine():
     def __init__(self):
@@ -15,6 +16,7 @@ class GameEngine():
 
     def init_states(self):
         self.states[GameState.TEAM_SELECTION] = team_selection.TeamSelectionState(self.data)
+        self.states[GameState.PROGRESS_WEEK] = progress_week.ProgressWeekState(self.data)
 
     def action(self, action):
         state_class = self.states[self.state]

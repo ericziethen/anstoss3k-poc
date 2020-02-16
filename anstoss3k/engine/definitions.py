@@ -13,7 +13,7 @@ class GameState(enum.Enum):
     # pylint: disable=invalid-name
     TEAM_SELECTION = 'Team Selection'
     PROGRESS_WEEK = 'Week Progress'
-    #MATCH_DAY_PREVIEW = 'Match Day Preview'
+    MATCH_DAY_PREVIEW = 'Match Day Preview'
     #MATCH_DAY_RESULS = 'Match Day Results'
     #TABLES = 'Tables'
     #SEASON_END = 'Season End'
