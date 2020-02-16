@@ -15,7 +15,7 @@ class GameState(enum.Enum):
     PROGRESS_WEEK = 'Week Progress'
     MATCH_DAY_PREVIEW = 'Match Day Preview'
     MATCH_DAY_RESULTS = 'Match Day Results'
-    #TABLES = 'Tables'
+    MATCH_DAY_TABLES = 'Tables'
     #SEASON_END = 'Season End'
 
 
