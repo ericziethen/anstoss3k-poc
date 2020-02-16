@@ -11,6 +11,7 @@ class GameAction(enum.Enum):
 @enum.unique
 class GameState(enum.Enum):
     # pylint: disable=invalid-name
+    UNKNOWN = 'Unknown State'
     TEAM_SELECTION = 'Team Selection'
     PROGRESS_WEEK = 'Week Progress'
     MATCH_DAY_PREVIEW = 'Match Day Preview'

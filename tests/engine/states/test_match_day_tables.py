@@ -9,7 +9,6 @@ def test_next_state_complete_action_more_games():
     assert state.next_state(GameAction.FINISH_MOVE) == GameState.TEAM_SELECTION
 
 
-
 def test_next_state_complete_action_no_more_games():
     data = {'current_match_day': 4, 'match_days': [1, 2, 3, 4]}
     state = MatchDayTablesState(data)

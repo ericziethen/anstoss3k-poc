@@ -12,3 +12,5 @@ class MatchDayTablesState(State):
                 return GameState.TEAM_SELECTION
 
             return GameState.SEASON_END
+
+        return GameState.UNKNOWN

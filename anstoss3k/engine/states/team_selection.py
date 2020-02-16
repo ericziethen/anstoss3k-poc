@@ -9,3 +9,5 @@ class TeamSelectionState(State):
     def next_state(self, action):
         if action == GameAction.FINISH_MOVE:
             return GameState.PROGRESS_WEEK
+
+        return GameState.UNKNOWN

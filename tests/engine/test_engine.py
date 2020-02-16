@@ -13,4 +13,3 @@ def test_game_action_next_state():
     game_engine.action(GameAction.FINISH_MOVE)
 
     assert game_engine.state == GameState.PROGRESS_WEEK
-

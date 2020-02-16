@@ -9,3 +9,5 @@ class MatchDayResultsState(State):
     def next_state(self, action):
         if action == GameAction.FINISH_MOVE:
             return GameState.MATCH_DAY_TABLES
+
+        return GameState.UNKNOWN
