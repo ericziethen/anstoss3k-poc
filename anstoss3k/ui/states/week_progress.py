@@ -4,14 +4,13 @@ import tkinter as tk
 
 from PIL import ImageTk
 
-from anstoss3k.ui.definitions import MEDIA_PATH
-from anstoss3k.ui.menu import MenuStateScreen
+from anstoss3k.ui.definitions import MEDIA_PATH, StateScreen
 
 
-class TeamSelectionStateScreen(MenuStateScreen):
+class ProgressWeekStateScreen(StateScreen):
     # TODO - If this comes from Config Files then move it to parent class
     def _draw_static_graphics(self):
-        img_path = os.path.join(MEDIA_PATH, 'backgrounds', 'Team Selection (grafik_cpr-0000001450).jpg')
+        img_path = os.path.join(MEDIA_PATH, 'backgrounds', 'Progress Week (grafik_cpr-0000000544).jpg')
         #print(img_path)
         self.background = ImageTk.PhotoImage(file=img_path)
         self.canvas.create_image(0, 0, image=self.background, anchor=tk.NW)
@@ -20,8 +19,8 @@ class TeamSelectionStateScreen(MenuStateScreen):
         #print(self.canvas.__dict__)
 
     def _draw_dynamic_graphics(self):
-        print('TeamSelectionStateScreen:Call _draw_dynamic_graphics()')
+        print('ProgressWeekStateScreen:Call _draw_dynamic_graphics()')
 
     def _draw_dynamic_content(self):
-        print('TeamSelectionStateScreen:Call _draw_dynamic_content()')
+        print('ProgressWeekStateScreen:Call _draw_dynamic_content()')
 

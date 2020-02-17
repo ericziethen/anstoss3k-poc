@@ -6,15 +6,23 @@ MEDIA_PATH = os.path.join(os.path.dirname(__file__), 'graphics')
 
 
 class StateScreen():
-    def __init__(self, root_window, dim_x, dim_y, *, ui_actions, menu=False):
+    def __init__(self, root_window, width, height, *, ui_actions, menu=False):
         self.root_window = root_window
         self.ui_actions = ui_actions
         self.has_menu = menu
-        self.canvas = tk.Canvas(root_window, width=dim_x, height=dim_y)
-        self.canvas.pack()
-        self._draw_static_graphics()
+        self.width = width
+        self.height = height
+        self.canvas = None
 
     def draw(self):
+        self.canvas = tk.Canvas(self.root_window, width=self.width, height=self.height)
+
+        # TODO - If can use place then we don't need to destroy all the time and the canvas only needs to be created at initialisation together with 
+        #self.canvas.pack()
+        self.canvas.place(x=0, y=0)
+
+
+        self._draw_static_graphics()
         self._draw_dynamic_graphics()
         self._draw_dynamic_content()
 
