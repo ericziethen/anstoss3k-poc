@@ -4,7 +4,8 @@ import tkinter as tk
 
 from PIL import ImageTk
 
-from anstoss3k.ui.definitions import MEDIA_PATH, MenuStateScreen
+from anstoss3k.ui.definitions import MEDIA_PATH
+from anstoss3k.ui.menu import MenuStateScreen
 
 
 class TeamSelectionStateScreen(MenuStateScreen):

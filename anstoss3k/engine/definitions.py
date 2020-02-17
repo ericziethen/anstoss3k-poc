@@ -25,7 +25,9 @@ class State():
         self.data = data
 
     def handle_input(self, action):
+        '''Process the input and update the current state.'''
         raise NotImplementedError
 
     def next_state(self, action):
+        '''Decide which state to go next to.'''
         raise NotImplementedError
