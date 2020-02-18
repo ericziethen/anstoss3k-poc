@@ -21,9 +21,9 @@ class MatchDayResultStateScreen(StateScreen):
 
     def _draw_dynamic_graphics(self):
         print('MatchDayResultStateScreen:Call _draw_dynamic_graphics()')
-        button_path = os.path.join(MEDIA_PATH, 'buttons', 'OK Not Selected (grafik_cpr-0000002713).bmp')
+        button_path = os.path.join(MEDIA_PATH, 'buttons', 'OK Not Selected (grafik_cpr-0000002713)_TRANS.png')
         self.ok_button_normal_img = ImageTk.PhotoImage(file=button_path)
-        button_path = os.path.join(MEDIA_PATH, 'buttons', 'OK Selected (grafik_cpr-0000002704).bmp')
+        button_path = os.path.join(MEDIA_PATH, 'buttons', 'OK Selected (grafik_cpr-0000002704)_TRANS.png')
         self.ok_button_pressed_img = ImageTk.PhotoImage(file=button_path)
 
         self.button = tk.Button(self.canvas, image=self.ok_button_normal_img, borderwidth=0)

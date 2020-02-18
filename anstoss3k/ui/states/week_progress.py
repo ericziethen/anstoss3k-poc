@@ -27,7 +27,7 @@ class ProgressWeekStateScreen(StateScreen):
 
     def _draw_completed(self):
         print('ProgressWeekStateScreen:Call _draw_completed()')
-        self.root_window.after(3000, self.week_over)
+        self.root_window.after(1000, self.week_over)
 
     def week_over(self):
         print('ProgressWeekStateScreen:Call week_over()')
