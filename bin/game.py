@@ -4,7 +4,8 @@ import tkinter as tk
 from anstoss3k.engine.engine import GameEngine, GameState
 from anstoss3k.ui.states import (
     team_selection,
-    week_progress
+    week_progress,
+    matchday_preview
 )
 
 GAME_DATA = {
@@ -23,9 +24,12 @@ class Game():
         self.setup_screens()
 
     def setup_screens(self):
+        # Can this done in a loop
         self.screens[GameState.TEAM_SELECTION] = team_selection.TeamSelectionStateScreen(
             self.root_window, self.dims[0], self.dims[1], ui_actions=self.ui_actions)
         self.screens[GameState.PROGRESS_WEEK] = week_progress.ProgressWeekStateScreen(
+            self.root_window, self.dims[0], self.dims[1], ui_actions=self.ui_actions)
+        self.screens[GameState.MATCH_DAY_PREVIEW] = matchday_preview.MatchDayPreviewStateScreen(
             self.root_window, self.dims[0], self.dims[1], ui_actions=self.ui_actions)
 
     def play(self):

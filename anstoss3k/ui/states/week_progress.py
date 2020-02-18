@@ -4,6 +4,7 @@ import tkinter as tk
 
 from PIL import ImageTk
 
+from anstoss3k.engine.definitions import GameAction
 from anstoss3k.ui.definitions import MEDIA_PATH, StateScreen
 
 
@@ -24,3 +25,10 @@ class ProgressWeekStateScreen(StateScreen):
     def _draw_dynamic_content(self):
         print('ProgressWeekStateScreen:Call _draw_dynamic_content()')
 
+    def _draw_completed(self):
+        print('ProgressWeekStateScreen:Call _draw_completed()')
+        self.root_window.after(3000, self.week_over)
+
+    def week_over(self):
+        print('ProgressWeekStateScreen:Call week_over()')
+        self.ui_actions.append(GameAction.FINISH_MOVE)
