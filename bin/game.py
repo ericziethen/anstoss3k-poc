@@ -5,7 +5,9 @@ from anstoss3k.engine.engine import GameEngine, GameState
 from anstoss3k.ui.states import (
     team_selection,
     week_progress,
-    matchday_preview
+    matchday_preview,
+    matchday_result,
+    matchday_tables
 )
 
 GAME_DATA = {
@@ -30,6 +32,10 @@ class Game():
         self.screens[GameState.PROGRESS_WEEK] = week_progress.ProgressWeekStateScreen(
             self.root_window, self.dims[0], self.dims[1], ui_actions=self.ui_actions)
         self.screens[GameState.MATCH_DAY_PREVIEW] = matchday_preview.MatchDayPreviewStateScreen(
+            self.root_window, self.dims[0], self.dims[1], ui_actions=self.ui_actions)
+        self.screens[GameState.MATCH_DAY_RESULTS] = matchday_result.MatchDayResultStateScreen(
+            self.root_window, self.dims[0], self.dims[1], ui_actions=self.ui_actions)
+        self.screens[GameState.MATCH_DAY_TABLES] = matchday_tables.MatchDayTablesStateScreen(
             self.root_window, self.dims[0], self.dims[1], ui_actions=self.ui_actions)
 
     def play(self):
