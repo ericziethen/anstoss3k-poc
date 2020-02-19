@@ -7,7 +7,8 @@ from anstoss3k.ui.states import (
     week_progress,
     matchday_preview,
     matchday_result,
-    matchday_tables
+    matchday_tables,
+    season_end
 )
 
 GAME_DATA = {
@@ -37,6 +38,8 @@ class Game():
             self.root_window, self.dims[0], self.dims[1], ui_actions=self.ui_actions)
         self.screens[GameState.MATCH_DAY_TABLES] = matchday_tables.MatchDayTablesStateScreen(
             self.root_window, self.dims[0], self.dims[1], ui_actions=self.ui_actions)
+        self.screens[GameState.SEASON_END] = season_end.SeasonEndStateScreen(
+            self.root_window, self.dims[0], self.dims[1], ui_actions=self.ui_actions)
 
     def play(self):
         # TODO - Start the initial screen
@@ -51,9 +54,12 @@ class Game():
     def check_ui_update(self):
         # Todo - Find a more defined way to treat the action
         if self.ui_actions:
-            self.engine.action(self.ui_actions[0])
-            del self.ui_actions[:]
-            self.play()
+            if self.engine.state == GameState.SEASON_END:
+                self.root_window.quit()
+            else:
+                self.engine.action(self.ui_actions[0])
+                del self.ui_actions[:]
+                self.play()
 
         # Always check for updated data
         self.root_window.after(500, self.check_ui_update)
