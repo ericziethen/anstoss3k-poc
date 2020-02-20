@@ -5,7 +5,7 @@ import tkinter as tk
 MEDIA_PATH = os.path.join(os.path.dirname(__file__), 'graphics')
 
 
-class StateScreen():
+class StateScreen():  # pylint: disable=too-few-public-methods
     def __init__(self, root_window, width, height, *, ui_actions, menu=False):
         self.root_window = root_window
         self.ui_actions = ui_actions
@@ -16,8 +16,6 @@ class StateScreen():
         self.canvas.place(x=0, y=0)
 
     def draw(self):
-        # TODO - If can use place then we don't need to destroy all the time and the canvas only needs to be created at initialisation together with 
-        #self.canvas.pack()
         tk.Misc.lift(self.canvas)
 
         self._draw_static_graphics()
@@ -29,9 +27,6 @@ class StateScreen():
 
         self._draw_completed()
 
-    def send_input_to_engine(self):
-        raise NotImplementedError
-
     def _draw_static_graphics(self):
         raise NotImplementedError
 
@@ -42,7 +37,7 @@ class StateScreen():
         raise NotImplementedError
 
     def _draw_menu(self):
-        raise NotImplementedError
+        pass
 
     def _draw_completed(self):
         pass

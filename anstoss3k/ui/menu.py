@@ -2,15 +2,14 @@
 import os
 import tkinter as tk
 
-import PIL.ImageOps
 from PIL import Image, ImageTk
 
 from anstoss3k.engine.definitions import GameAction
-from anstoss3k.engine.states import *
+# from anstoss3k.engine.states import *
 from anstoss3k.ui.definitions import MEDIA_PATH, StateScreen
 
 
-class MenuStateScreen(StateScreen):
+class MenuStateScreen(StateScreen):  # pylint: disable=abstract-method
     def __init__(self, root_window, dim_x, dim_y, *, ui_actions):
         super().__init__(root_window, dim_x, dim_y, ui_actions=ui_actions, menu=True)
         self.buttons = []
@@ -38,10 +37,9 @@ class MenuStateScreen(StateScreen):
             self.finish_move_bttn_idx = idx
 
         # Magic Numbers for now
-        self.canvas.create_window(8, 480-31-2, window=frame, anchor=tk.NW)
+        self.canvas.create_window(8, 480 - 31 - 2, window=frame, anchor=tk.NW)
 
     def bttn_press(self, idx):
         if idx == self.finish_move_bttn_idx:
             # Finish the move
-            # TODO - Need to trigger sending a finish move action to the engine
             self.ui_actions.append(GameAction.FINISH_MOVE)

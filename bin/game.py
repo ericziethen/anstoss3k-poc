@@ -42,17 +42,10 @@ class Game():
             self.root_window, self.dims[0], self.dims[1], ui_actions=self.ui_actions)
 
     def play(self):
-        # TODO - Start the initial screen
-        print(F'DRAW SCREEN: {str(self.engine.state)}')
-
-        #if self.current_canvas:
-        #    self.current_canvas.destroy()
-
         self.screens[self.engine.state].draw()
         self.current_canvas = self.screens[self.engine.state].canvas
 
     def check_ui_update(self):
-        # Todo - Find a more defined way to treat the action
         if self.ui_actions:
             if self.engine.state == GameState.SEASON_END:
                 self.root_window.quit()

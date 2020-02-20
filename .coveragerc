@@ -11,6 +11,7 @@ omit =
     *__init__*
     */migrations/*
     anstoss3k/manage.py
+    anstoss3k/ui/*
 exclude_lines =
     pragma: no cover
     def __repr__
