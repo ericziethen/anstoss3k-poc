@@ -11,10 +11,28 @@ from anstoss3k.ui.states import (
     season_end
 )
 
-GAME_DATA = {
-    'teams': ['Team 1', 'Team 2']
+
+
+
+
+
+
+
+# GAME DATA WE NEED
+    # 4 Teams
+    # Random Match Days
+    # Randomize Result Generation and calculation
+
+TEAM_DIC = {
+    1: {'Name': 'Bayern München'},
+    2: {'Name': 'RB Leipzig'},
+    3: {'Name': 'Borussia Dortmund'},
+    4: {'Name': 'Bor. Mönchengladbach'},
 }
 
+GAME_DATA = {
+    'teams': TEAM_DIC
+}
 
 class Game():
     def __init__(self, root_window, width, height):
