@@ -11,17 +11,11 @@ from anstoss3k.ui.states import (
     season_end
 )
 
-
-
-
-
-
-
-
 # GAME DATA WE NEED
     # 4 Teams
     # Random Match Days
     # Randomize Result Generation and calculation
+    # Table Calculation
 
 TEAM_DIC = {
     1: {'Name': 'Bayern München'},
@@ -31,18 +25,25 @@ TEAM_DIC = {
 }
 
 MATCH_DAY_DIC = {
-    1: ((1, 2), (3, 4)),
-    2: ((1, 3), (2, 4)),
-    3: ((1, 4), (3, 2)),
-    4: ((2, 1), (4, 3)),
-    5: ((3, 1), (4, 2)),
-    6: ((4, 1), (2, 3)),
+    1: [{'home': 1, 'away': 2, 'home_score': None, 'away_score': None},
+        {'home': 3, 'away': 4, 'home_score': None, 'away_score': None}],
+    2: [{'home': 1, 'away': 3, 'home_score': None, 'away_score': None},
+        {'home': 2, 'away': 4, 'home_score': None, 'away_score': None}],
+    3: [{'home': 1, 'away': 4, 'home_score': None, 'away_score': None},
+        {'home': 3, 'away': 2, 'home_score': None, 'away_score': None}],
+    4: [{'home': 2, 'away': 1, 'home_score': None, 'away_score': None},
+        {'home': 4, 'away': 3, 'home_score': None, 'away_score': None}],
+    5: [{'home': 3, 'away': 1, 'home_score': None, 'away_score': None},
+        {'home': 4, 'away': 2, 'home_score': None, 'away_score': None}],
+    6: [{'home': 4, 'away': 1, 'home_score': None, 'away_score': None},
+        {'home': 2, 'away': 3, 'home_score': None, 'away_score': None}],
 }
 
 GAME_DATA = {
     'teams': TEAM_DIC,
     'match_days': MATCH_DAY_DIC,
 }
+
 
 class Game():
     def __init__(self, root_window, width, height):
@@ -76,6 +77,7 @@ class Game():
     def check_ui_update(self):
         if self.ui_actions:
             if self.engine.state == GameState.SEASON_END:
+                print(self.engine.data)
                 self.root_window.quit()
             else:
                 self.engine.action(self.ui_actions[0])
