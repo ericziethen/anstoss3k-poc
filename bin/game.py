@@ -30,8 +30,18 @@ TEAM_DIC = {
     4: {'Name': 'Bor. Mönchengladbach'},
 }
 
+MATCH_DAY_DIC = {
+    1: ((1, 2), (3, 4)),
+    2: ((1, 3), (2, 4)),
+    3: ((1, 4), (3, 2)),
+    4: ((2, 1), (4, 3)),
+    5: ((3, 1), (4, 2)),
+    6: ((4, 1), (2, 3)),
+}
+
 GAME_DATA = {
-    'teams': TEAM_DIC
+    'teams': TEAM_DIC,
+    'match_days': MATCH_DAY_DIC,
 }
 
 class Game():
