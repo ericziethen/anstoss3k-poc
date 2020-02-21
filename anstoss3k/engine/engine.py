@@ -31,8 +31,8 @@ class GameEngine():
         self.state = state_class.next_state(action)
 
     def init_season(self):
-        self.data['match_days'] = []
-        self.init_matchdays()
+        # self.data['match_days'] = []
+        # self.init_matchdays()
         self.data['current_match_day'] = 1
 
     def init_matchdays(self):

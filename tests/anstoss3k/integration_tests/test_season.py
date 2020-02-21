@@ -2,10 +2,10 @@
 from anstoss3k.engine.engine import GameEngine
 from anstoss3k.engine.definitions import GameAction, GameState
 
-from bin.game import GAME_DATA
+from bin.game import setup_test_data
 
-def test_season_states_2_teams():
-    engine = GameEngine(GAME_DATA)
+def test_season():
+    engine = GameEngine(setup_test_data())
 
     # Match day 1
     assert engine.state == GameState.TEAM_SELECTION
@@ -49,7 +49,6 @@ def test_season_states_2_teams():
         engine.action(GameAction.FINISH_MOVE)
         assert engine.state == GameState.MATCH_DAY_TABLES
         engine.action(GameAction.FINISH_MOVE)
-
 
     # End of Season
     assert engine.state == GameState.SEASON_END
